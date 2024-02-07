@@ -2,12 +2,13 @@ import sqlite3
 import json
 from uuid import uuid4
 from src.database.query_helper import QueryHelper
+from src.utils.config import SQLITE_ADDRESS
 
 
 class SqlHelper:
     cursor = None
 
-    def __init__(self, db_file="/home/achyut/test.db") -> None:
+    def __init__(self, db_file=SQLITE_ADDRESS) -> None:
         self.db_file = db_file
 
     def run_query(self, query, parameters=None):
